@@ -1,0 +1,1 @@
+Reserved exception code ranges table in the provider developer guide, recording the error code block owned by each provider so new providers can claim a free one, along with corrections to the `m365`, `linode` and `nhn` range header comments

@@ -1,7 +1,7 @@
 from prowler.exceptions.exceptions import ProwlerException
 
 
-# Exceptions codes from 18000 to 18099 are reserved for Linode exceptions
+# Exceptions codes from 18000 to 18999 are reserved for Linode exceptions
 class LinodeBaseException(ProwlerException):
     """Base class for Linode errors."""
 

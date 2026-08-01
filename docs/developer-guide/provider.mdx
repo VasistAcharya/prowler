@@ -872,6 +872,39 @@ def get_global_region() -> str:
 **Explanation:**
 Custom exceptions are needed to be able to handle the errors in a more specific way. Prowler uses a structured exception system with error codes, messages, and remediation steps.
 
+##### Reserved Exception Code Ranges
+
+Each provider owns an exclusive block of error codes. Claim the next free block and add it to this table in the same pull request.
+
+| Code Range  | Owner                               |
+| ----------- | ----------------------------------- |
+| 1000–1999   | AWS                                 |
+| 2000–2999   | Azure                               |
+| 3000–3999   | GCP                                 |
+| 4000–4999   | Kubernetes                          |
+| 5000–5999   | GitHub                              |
+| 6000–6999   | Microsoft 365                       |
+| 7000–7999   | Oracle Cloud (OCI)                  |
+| 8000–8999   | MongoDB Atlas                       |
+| 9000–9999   | Cloudflare                          |
+| 10000–10999 | Alibaba Cloud                       |
+| 11000–11999 | Image                               |
+| 12000–12999 | Google Workspace                    |
+| 13000–13999 | Vercel                              |
+| 14000–14999 | Okta                                |
+| 15000–15999 | Scaleway                            |
+| 16000–16999 | StackIT                             |
+| 17000–17999 | OpenStack                           |
+| 18000–18999 | Linode                              |
+| 19000–19999 | E2E Networks                        |
+| 20000–20999 | Huawei Cloud                        |
+| 21000–21999 | NHN                                 |
+| 22000+      | Free                                |
+
+<Note>
+Some internal modules also use this space: `prowler/lib/scan` (5000–5999), `prowler/providers/aws/lib/s3` (6000–6999), `prowler/providers/aws/lib/security_hub` (7000–7999), `prowler/lib/outputs/slack` (8000–8999) and `prowler/lib/outputs/jira` (9000–9999).
+</Note>
+
 **File:** `prowler/providers/<provider_name>/exceptions.py`
 
 ```python
